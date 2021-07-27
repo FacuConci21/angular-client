@@ -1,0 +1,13 @@
+<button type="button" (click)='show = !show' class="btn btn-primary my-3">
+    {{ (isShowed)? 'Contraer':'Expandir' }}
+</button>
+<div class="card">
+    <div class="card-header">
+        Listado de cursos:
+    </div>
+    <ul class="list-group" *ngIf="show">
+        <li class="list-group-item" *ngFor="let curse of curses">
+            {{curse}}
+        </li>
+    </ul>
+</div>
