@@ -5,17 +5,15 @@
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>nombre</th>
-                    <th>apellido</th>
-                    <th>creacion</th>
+                    <th>Razon Social</th>
+                    <th>Fecha Activ</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let client of getClients">
-                    <td>{{client.id}}</td>
-                    <td>{{client.firstname}}</td>
-                    <td>{{client.lastname}}</td>
-                    <td>{{client.createdAt}}</td>
+                    <td>{{client.idCli}}</td>
+                    <td>{{client.razonSocial}}</td>
+                    <td>{{client.fechaActiv}}</td>
                 </tr>
             </tbody>
         </table>

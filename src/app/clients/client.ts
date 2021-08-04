@@ -1,8 +1,7 @@
 export class Client {
-    id?: number;
-    firstname?: string;
-    lastname?: string;
-    createdAt?: Date;
+    idCli?: number;
+    razonSocial?: string;
+    fechaActiv?: string;
 
     // constructor() {
     //     this.id = 0;

@@ -31,9 +31,6 @@
               "src/assets/css/bootstrap.min.css"
             ],
             "scripts": [
-              "assets/js/bootstrap.bundle.min.js",
-              "assets/js/popper.min.js",
-              "assets/js/bootstrap.min.js"
             ]
           },
           "configurations": {
