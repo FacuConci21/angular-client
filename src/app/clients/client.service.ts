@@ -14,6 +14,6 @@ export class ClientService {
   constructor(private http: HttpClient) { }
 
   getClients(): Observable<Client[]> {
-    return this.http.get<Client[]>(this.endpoint + 'sup');
+    return this.http.get<Client[]>(this.endpoint + 'all');
   }
 }

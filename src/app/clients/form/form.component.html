@@ -1,1 +1,27 @@
-<p>form works!</p>
+<div class="card bg-dark text-white">
+    <div class="card-header">{{ getTitle }}</div>
+    <div class="card-body">
+
+        <form (ngSubmit) = "createNewClient()">
+            <div class="form-group row">
+                <label for="razonSocial" class="col-form-lavel col-sm-2">Razon Social</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="razonSocial" [(ngModel)]="getClient.razonSocial"> 
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="fechaActiv" class="col-form-lavel col-sm-2">Fecha Activ</label>
+                <div class="col-sm-6">
+                    <input type="text" name="fechaActiv" class="form-control" [(ngModel)]="getClient.fechaActiv"> 
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <button class="btn btn-primary" role="button">crear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
