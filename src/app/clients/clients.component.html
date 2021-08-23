@@ -20,8 +20,11 @@
                     <td>{{client.razonSocial}}</td>
                     <td>{{client.fechaActiv}}</td>
                     <td>
-                        <button type="button" name="button" class="btn btn-primary" [routerLink]="['/clientes/form', client.idCli]">edit</button>
+                        <button type="button" name="edit" class="btn btn-primary btn-sm" [routerLink]="['/clientes/form', client.idCli]">edit</button>
                     </td>
+                    <td>
+                        <button type="button" name="delete" class="btn btn-danger btn-sm" (click)="delete(client)" >eliminar</button>
+                    </td> 
                 </tr>
             </tbody>
         </table>
