@@ -15,6 +15,7 @@ export class ClientsComponent implements OnInit {
   constructor(private service: ClientService) {}
 
   get getClients(): Client[] {
+    console.log(this.clients);
     return this.clients;
   }
 

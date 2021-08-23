@@ -16,6 +16,7 @@
                     <th>id</th>
                     <th>Razon Social</th>
                     <th>Fecha Activ</th>
+                    <th>Barrio</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +24,7 @@
                     <td>{{client.idCli}}</td>
                     <td>{{client.razonSocial}}</td>
                     <td>{{client.fechaActiv}}</td>
+                    <td>{{client.neighborhood}}</td>
                     <td>
                         <button type="button" name="edit" class="btn btn-primary btn-sm" [routerLink]="['/clientes/form', client.idCli]">edit</button>
                     </td>

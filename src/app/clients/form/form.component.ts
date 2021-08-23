@@ -52,6 +52,6 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadClient();
+    this.loadClient;
   }
 }

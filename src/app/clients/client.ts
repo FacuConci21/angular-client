@@ -2,11 +2,16 @@ export class Client {
   idCli?: number;
   razonSocial?: string;
   fechaActiv?: string;
+  neighborhood?: {
+    idBarrio: number;
+    name: string;
+    localidad: {
+      idLocalidad: number;
+      name: string;
+    };
+  };
 
-  // constructor() {
-  //     this.id = 0;
-  //     this.firstname = '';
-  //     this.lastname = '';
-  //     this
-  // }
+  get getNBName(): string {
+    return this.neighborhood ? this.neighborhood.name : 'sin cargar';
+  }
 }
