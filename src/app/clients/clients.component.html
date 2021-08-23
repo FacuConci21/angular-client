@@ -6,7 +6,11 @@
     </div>
 
     <div class="card-body text-success">
-        <table class="table table-bordered table-striped">
+
+        <div class="alert alert-info" *ngIf="getClients.length === 0">
+            No se han recibido registros como respuesta.
+        </div>
+        <table class="table table-bordered table-striped" *ngIf="getClients.length > 0">
             <thead>
                 <tr>
                     <th>id</th>
