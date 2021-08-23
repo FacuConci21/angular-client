@@ -19,6 +19,9 @@
                     <td>{{client.idCli}}</td>
                     <td>{{client.razonSocial}}</td>
                     <td>{{client.fechaActiv}}</td>
+                    <td>
+                        <button type="button" name="button" class="btn btn-primary" [routerLink]="['/clientes/form', client.idCli]">edit</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
