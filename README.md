@@ -6,7 +6,7 @@ Aplicacion cliente que consume datos de la API creada con spring, en [este repos
 
 ## Muestra
 
-Dejo un video de muestra del proyecto en su estado mas reciente: [video de muestra]().
+Dejo un video de muestra del proyecto en su estado mas reciente: [video de muestra](https://youtu.be/tEyrS0r6D_4).
 
 ## Running
 
