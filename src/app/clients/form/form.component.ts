@@ -41,7 +41,7 @@ export class FormComponent implements OnInit {
 
   public loadClient(): void {
     this.activatedRoute.params.subscribe((params) => {
-      const id = params['id'];
+      let id = params['id'];
 
       if (id) {
         this.service.getClient(id).subscribe((client) => {
@@ -52,6 +52,6 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadClient;
+    this.loadClient();
   }
 }

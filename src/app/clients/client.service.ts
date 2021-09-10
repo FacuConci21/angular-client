@@ -1,7 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { Client } from './client';
+import { map, catchError } from 'rxjs/operators';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -12,14 +15,27 @@ export class ClientService {
     'Content-Type': 'application/json',
   });
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   getClients(): Observable<Client[]> {
-    return this.http.get<Client[]>(this.endpoint + 'all');
+    return this.http
+      .get(this.endpoint + 'all')
+      .pipe(map((res) => res as Client[]));
   }
 
   getClient(id: String): Observable<Client> {
-    return this.http.get<Client>(this.endpoint + '/one/' + id);
+    return this.http.get<Client>(this.endpoint + '/one/' + id).pipe(
+      catchError((err) => {
+        this.router.navigate(['/clientes']);
+        console.error(err.message);
+        Swal.fire({
+          title: 'Error getting client',
+          text: err.message,
+          icon: 'error',
+        });
+        return throwError(err);
+      })
+    );
   }
 
   create(client: Client): Observable<Client> {
