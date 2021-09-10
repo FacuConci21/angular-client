@@ -25,12 +25,12 @@ export class ClientService {
 
   getClient(id: String): Observable<Client> {
     return this.http.get<Client>(this.endpoint + '/one/' + id).pipe(
-      catchError((err) => {
+      catchError((err: any) => {
         this.router.navigate(['/clientes']);
-        console.error(err.message);
+        console.error(err.error.message);
         Swal.fire({
-          title: 'Error getting client',
-          text: err.message,
+          title: 'Ocurrio un error',
+          text: 'mensaje: ' + err.error.message,
           icon: 'error',
         });
         return throwError(err);
@@ -39,14 +39,38 @@ export class ClientService {
   }
 
   create(client: Client): Observable<Client> {
-    return this.http.post<Client>(this.endpoint + 'create', client, {
-      headers: this.httpHeaders,
-    });
+    return this.http
+      .post<Client>(this.endpoint + 'create', client, {
+        headers: this.httpHeaders,
+      })
+      .pipe(
+        catchError((e: any) => {
+          console.error(e.error.message);
+          Swal.fire({
+            title: 'Ocurrio un error.',
+            text: 'mensaje: ' + e.error.error,
+            icon: 'error',
+          });
+          return throwError(e);
+        })
+      );
   }
 
   delete(id: number | undefined): Observable<Client> {
-    return this.http.delete<Client>(this.endpoint + 'delete/' + id, {
-      headers: this.httpHeaders,
-    });
+    return this.http
+      .delete<Client>(this.endpoint + 'delete/' + id, {
+        headers: this.httpHeaders,
+      })
+      .pipe(
+        catchError((e: any) => {
+          console.error(e.error.message);
+          Swal.fire({
+            title: 'Ocurrio un error.',
+            text: 'mensaje: ' + e.error.message,
+            icon: 'error',
+          });
+          return throwError(e);
+        })
+      );
   }
 }

@@ -1,7 +1,7 @@
 export class Client {
   idCli?: number;
   razonSocial?: string;
-  fechaActiv?: string;
+  fechaActiv?: Date;
   neighborhood?: {
     idBarrio: number;
     name: string;
