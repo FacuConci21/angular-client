@@ -10,6 +10,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './clients/form/form.component';
 import { FormsModule } from '@angular/forms';
+import { NeighborhoodService } from './neighborhood/neighborhood.service';
+import { NeighborhoodComponent } from './neighborhood/neighborhood.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/clientes', pathMatch: 'full' },
@@ -26,6 +28,7 @@ const routes: Routes = [
     DirectivaComponent,
     ClientsComponent,
     FormComponent,
+    NeighborhoodComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [ClientService],
+  providers: [ClientService, NeighborhoodService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
