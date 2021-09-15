@@ -1,4 +1,4 @@
-# Angular Client App
+# Suppliers Client App
 
 ## Descripcion
 
