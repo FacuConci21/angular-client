@@ -12,7 +12,7 @@ import { ClientService } from '../client.service';
 })
 export class FormComponent implements OnInit {
   private title: string = 'Nuevo Cliente';
-  private client: Client = new Client();
+  private client: Client = new Client({});
   private neighbors: Neighborhood[] = [];
 
   constructor(

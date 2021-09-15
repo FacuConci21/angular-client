@@ -2,16 +2,22 @@ export class Client {
   idCli?: number;
   razonSocial?: string;
   fechaActiv?: Date;
-  neighborhood?: {
-    idBarrio: number;
-    name: string;
-    localidad: {
-      idLocalidad: number;
-      name: string;
-    };
-  };
+  neighborhood?: Neighborhood;
 
-  get getNBName(): string {
-    return this.neighborhood ? this.neighborhood.name : 'sin cargar';
+  constructor(obj: any) {
+    this.idCli = obj.idCli;
+    this.razonSocial = obj.razonSocial;
+    this.fechaActiv = obj.fechaActiv;
+    this.neighborhood = new Neighborhood(obj.neighborhood);
+  }
+}
+
+export class Neighborhood {
+  idBarrio?: number;
+  name?: string;
+
+  constructor(obj: any) {
+    this.idBarrio = obj.idBarrio;
+    this.name = obj.name;
   }
 }

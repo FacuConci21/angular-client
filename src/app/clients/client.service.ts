@@ -20,7 +20,7 @@ export class ClientService {
   getClients(): Observable<Client[]> {
     return this.http
       .get(this.endpoint + 'all')
-      .pipe(map((res) => res as Client[]));
+      .pipe(map((data: any) => data.map((client: any) => new Client(client))));
   }
 
   getClient(id: String): Observable<Client> {

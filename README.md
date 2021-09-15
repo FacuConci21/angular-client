@@ -2,7 +2,7 @@
 
 ## Descripcion
 
-Aplicacion cliente que consume datos de la API creada con spring, en [este repositorio](https://github.com/FacuConci21/udemy-rest).
+Aplicacion cliente que consume datos de la API creada con spring, en [este repositorio](https://github.com/FacuConci21/suppliers-backend.git).
 
 ## Muestra
 
