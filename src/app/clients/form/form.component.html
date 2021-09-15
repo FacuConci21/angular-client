@@ -2,18 +2,23 @@
     <div class="card-header">{{ getTitle }}</div>
     <div class="card-body">
 
-        <form (ngSubmit) = "createNewClient()">
+        <form (ngSubmit) = "createNewClient()" #clientForm="ngForm">
             <div class="form-group row">
                 <label for="razonSocial" class="col-form-lavel col-sm-2">Razon Social</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="razonSocial" [(ngModel)]="getClient.razonSocial" placeholder="El Nombre Papá">
+                    <input type="text" class="form-control" name="razonSocial" [(ngModel)]="getClient.razonSocial" placeholder="El Nombre Papá" required maxlength="100" #razonSocial="ngModel">
+                    <div class="alert alert-danger" *ngIf="razonSocial.invalid && razonSocial.touched">
+                        <div *ngIf="razonSocial.errors?.required">
+                            Campo obligatorio.
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="fechaActiv" class="col-form-lavel col-sm-2">Fecha Activ</label>
+                <label for="fechaActiv" class="col-form-lavel col-sm-2">Fecha Activacion</label>
                 <div class="col-sm-6">
-                    <input type="text" name="fechaActiv" class="form-control" [(ngModel)]="getClient.fechaActiv" placeholder="AAAA-MM-DD"> 
+                    <input type="date" name="fechaActiv" class="form-control" [(ngModel)]="getClient.fechaActiv" required> 
                 </div>
             </div>
             
@@ -28,7 +33,7 @@
 
             <div class="form-group row">
                 <div class="col-sm-6">
-                    <button class="btn btn-primary" role="button">crear</button>
+                    <button class="btn btn-primary" role="button" [disabled]="!clientForm.form.valid">crear</button>
                 </div>
             </div>
         </form>

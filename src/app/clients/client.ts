@@ -5,10 +5,12 @@ export class Client {
   neighborhood?: Neighborhood;
 
   constructor(obj: any) {
-    this.idCli = obj.idCli;
-    this.razonSocial = obj.razonSocial;
-    this.fechaActiv = obj.fechaActiv;
-    this.neighborhood = new Neighborhood(obj.neighborhood);
+    if (obj) {
+      this.idCli = obj.idCli;
+      this.razonSocial = obj.razonSocial;
+      this.fechaActiv = obj.fechaActiv;
+      this.neighborhood = new Neighborhood(obj.neighborhood);
+    }
   }
 }
 
